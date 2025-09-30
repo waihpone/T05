@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV Energy Insights Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Dashboard layout: hero introduction, responsive chart grid, context footer -->
+    <a class="skip-link" href="#dashboard">Skip to charts</a>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Australian Energy Market · 1998–2024</p>
+        <h1>TV Energy Insights Dashboard</h1>
+        <p class="hero__lede">
+          Explore how television energy consumption and wholesale electricity prices
+          have shifted over time. The charts below summarise more than 500 TV models
+          alongside national energy spot prices. Resize your window to see how the visuals adapt.
+        </p>
+        <dl class="hero__metrics" aria-label="At a glance figures">
+          <div class="hero__metric">
+            <dt>TV models analysed</dt>
+            <dd>512</dd>
+          </div>
+          <div class="hero__metric">
+            <dt>Screen technologies</dt>
+            <dd>LCD · LED · OLED</dd>
+          </div>
+          <div class="hero__metric">
+            <dt>Price coverage</dt>
+            <dd>1998 – 2024</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <main id="dashboard" class="dashboard" aria-label="Television energy insight charts">
+      <section class="chart-card" aria-labelledby="chart-efficiency">
+        <figure class="chart-figure">
+          <figcaption class="chart-header">
+            <h2 id="chart-efficiency">Efficiency vs Annual Energy Use</h2>
+            <p>
+              Each dot represents a TV model. Colour indicates the primary screen technology, star
+              rating reflects efficiency, and the vertical axis shows labelled energy consumption in kWh.
+            </p>
+          </figcaption>
+          <div class="chart-container" id="scatter-chart" role="img" aria-label="Scatter plot of energy consumption versus star rating"></div>
+        </figure>
+      </section>
+
+      <section class="chart-card" aria-labelledby="chart-donut">
+        <figure class="chart-figure">
+          <figcaption class="chart-header">
+            <h2 id="chart-donut">Energy Mix Across Technologies</h2>
+            <p>
+              Average annual energy draw by screen technology across all TV sizes. Values represent the
+              labelled consumption collected in the national energy register.
+            </p>
+          </figcaption>
+          <div class="chart-container" id="donut-chart" role="img" aria-label="Donut chart of average energy consumption by screen technology"></div>
+        </figure>
+      </section>
+
+      <section class="chart-card" aria-labelledby="chart-bar">
+        <figure class="chart-figure">
+          <figcaption class="chart-header">
+            <h2 id="chart-bar">55-inch TVs: Typical Consumption</h2>
+            <p>
+              Comparing mean labelled energy use for 55-inch models highlights the trade-offs in power demand
+              between OLED, LED, and LCD panels at a popular screen size.
+            </p>
+          </figcaption>
+          <div class="chart-container" id="bar-chart" role="img" aria-label="Bar chart comparing energy consumption for 55 inch TVs"></div>
+        </figure>
+      </section>
+
+      <section class="chart-card" aria-labelledby="chart-line">
+        <figure class="chart-figure">
+          <figcaption class="chart-header">
+            <h2 id="chart-line">Wholesale Power Prices</h2>
+            <p>
+              National Electricity Market spot prices averaged across mainland states. Peaks in 2017 and 2022
+              align with supply shocks and market interventions affecting households.
+            </p>
+          </figcaption>
+          <div class="chart-container" id="line-chart" role="img" aria-label="Line chart of average spot electricity prices from 1998 to 2024"></div>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Data: Australian Government Equipment Energy Efficiency Register &amp; Australian Energy Regulator (AER).
+      </p>
+    </footer>
+
+    <!-- Main entry point loads individual chart modules to keep files focused and cacheable -->
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>
